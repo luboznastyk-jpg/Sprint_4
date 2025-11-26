@@ -2,6 +2,8 @@ import pytest
 
 from main import BooksCollector
 
+from data import libr
+
 @pytest.fixture 
 def collector(scope = 'session'):
     collector = BooksCollector()
@@ -9,14 +11,5 @@ def collector(scope = 'session'):
 
 @pytest.fixture
 def add_book():
-    collector = BooksCollector()
-    collector.books_genre = {
-        'Гордость и предубеждение и зомби': 'Фантастика',
-        'Любимая книга': '',
-        'Еще одна любимая книга': '',
-        'Новая книга': 'Фантастика',
-        'Неизвестная книга': 'Детективы',
-        'Детская книга': 'Комедии',
-        'Взрослая книга': 'Детективы'
-    }
+    collector.books_genre = libr
     return collector
